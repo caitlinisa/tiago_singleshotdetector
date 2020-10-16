@@ -1,4 +1,3 @@
-import h5py
 import numpy as np
 import scipy.io
 import matplotlib.pyplot as plt
@@ -46,7 +45,10 @@ class Dataloader:
             core_samples_mask[db.core_samples_indices_] = True
             labels = db.labels_
             n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
+        return n_clusters
             
+    def get_labels(self,np_labels):
+
 
     
     def visualize_images(self,np_image,index):
@@ -63,4 +65,4 @@ dl = Dataloader()
 np_image,np_labels,np_names = dl.convert_to_numpy()
 dl.visualize_images(np_image,0)
 dl.visualize_labels(np_labels,0)
-#print (label[0])
+
